@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Detection Of Sepsis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12"  style="margin: 5px auto;">
+                    <h4>What is Sepsis??</h4>
+                    <p>Sepsis occurs when chemicals released in the bloodstream to fight an infection trigger inflammation throughout the body.
+                    This can cause a cascade of changes that damage multiple organ systems, leading them to fail, sometimes even resulting in death.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"  style="margin: 5px auto; ">
+                    <h4 >Symptoms of Sepsis</h4>
+                    <ul>
+                        <li >Fever and chills</li>
+                        <li>Very low body temperature</li>
+                        <li>Peeing less than normal</li>
+                        <li>Nausea and vomiting</li>
+                        <li>Diarrhea</li>
+                    </ul>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"  style="margin: 5px auto;">
+            <img class="center"
+            src="https://previews.123rf.com/images/shiyiershier/shiyiershier1306/shiyiershier130600006/20288181-disease-symptoms-01-fever-and-chills-headache-nausea-cough-expressions-boy.jpg"
+            alt="Symptoms of Sepsis" width="30%" height="100%">
+            </div>
+        </div>
+    <h1>Clinical Data Collection</h1>
+        <div class="row">
+            <div class="col-md-8" style="margin: 10px auto; ">
+                <form action="/predict" method="post">
+                    <h4>Vital Signs</h4>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="HR" placeholder="Heart Rate" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="O2Sat" placeholder="Pulse oximetry (%)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Temp" placeholder="Temperature (Deg C)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="SBP" placeholder="Systolic BP (mm Hg)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="MAT" placeholder="Mean arterial pressure (mm Hg)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="DBP" placeholder="Diastolic BP (mm Hg)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Resp" placeholder="Respiration rate (breaths per minute)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="EtCO2" placeholder="End tidal carbon dioxide (mm Hg)" min="0" step="0.01">
+                    </div>
+
+                    <!-- Laboratory Values -->
+                    <h4>Laboratory Values</h4>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="BaseExcess" placeholder="Measure of excess bicarbonate (mmol/L)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="HCO3" placeholder="Bicarbonate (mmol/L)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="FiO2" placeholder="Fraction of inspired oxygen (%)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="pH" placeholder="N/A" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="PaCO2" placeholder="PaCO2" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="SaO2" placeholder="SaO2" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="AST" placeholder="AST" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="BUN" placeholder="BUN" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Alkalinephos" placeholder="Alkalinephos" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Calcium" placeholder="Calcium" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Chloride" placeholder="Chloride" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Creatinie" placeholder="Creatinie" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Bilirubin_direct" placeholder="Bilirubin_direct" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Glucose" placeholder="Glucose" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Lactate" placeholder="Lactate" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Magnesium" placeholder="Magnesium" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Phosphate" placeholder="Phosphate" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Potassium" placeholder="Potassium" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Bilirubin_total" placeholder="Bilirubin_total" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="TroponinI" placeholder="TroponinI" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Hct" placeholder="Hct" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Hgb" placeholder="Hgb" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="PTT" placeholder="PTT" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="WBC" placeholder="WBC" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Fibrinogen" placeholder="Fibrinogen" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Platelets" placeholder="Platelets" min="0" step="0.01">
+                    </div>
+
+                    <h4>Demographics</h4>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Age" placeholder="Age (100 for above 90 years)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Gender" placeholder="Female(0) or Male(1)" min="0" step="1" max="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Unit1" placeholder="Administrative identifier for ICU unit (MICU)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Unit2" placeholder="Administrative identifier for ICU unit (SICU)" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="HospAdmTime" placeholder="Hrs b/w hospital admit and ICU admit" min="0" step="0.01">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="ICULOS" placeholder="ICU length-of-stay (hours since ICU admit)" min="0" step="0.01">
+                    </div>
+                    <!-- Submit Button -->
+                  <!--  <div class="form-group"  style="margin: 10px auto;">
+                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                    </div>-->
+                    <button type="submit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-lg ">Predict</button></div>
+                </form>
+            </div>
+        </div>
+        <div id="result">
+		<div class="col-lg-12 " >
+						<p style="font-size:20px"><b>1 is SEPSIS, 0 is NO SEPSIS:</b> </p>
+						<samp>{{ prediction_text }}</samp></div>
+						</div></div>
+ </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
